@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dish: #F8FAFC;
+  --dish-bg: #F8FAFC;
+  --dish-card: rgba(255, 255, 255, 0.94);
+  --dish-border: rgba(203, 213, 225, 0.85);
+  --dish-hover: rgba(241, 245, 249, 0.95);
+  --dish-subtle: #F1F5F9;
+
+  --specimen-base: #0F172A;
+  --specimen-text: #0F172A;
+  --specimen-dim: #64748B;
+
+  --color-safe: #059669;
+  --color-low: #65A30D;
+  --color-medium: #D97706;
+  --color-high: #EA580C;
+  --color-critical: #E11D48;
+  --color-immune: #0284C7;
+  --color-welcome: #0284C7;
+}
+
+.dark {
+  --bg-dish: #080C0E;
+  --dish-bg: #080C0E;
+  --dish-card: rgba(13, 20, 24, 0.88);
+  --dish-border: rgba(20, 184, 166, 0.20);
+  --dish-hover: rgba(20, 184, 166, 0.12);
+  --dish-subtle: #0F1A1F;
+
+  --specimen-base: #F1F5F9;
+  --specimen-text: #F1F5F9;
+  --specimen-dim: #94A3B8;
+
+  --color-safe: #10B981;
+  --color-low: #84CC16;
+  --color-medium: #F59E0B;
+  --color-high: #F97316;
+  --color-critical: #F43F5E;
+  --color-immune: #06B6D4;
+  --color-welcome: #38BDF8;
+}
+
+body {
+  background-color: var(--dish-bg);
+  color: var(--specimen-text);
+  font-family: 'Calibri', 'Carlito', 'Aptos', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Monospace typography for telemetry and numbers */
+.font-mono {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+/* Primary Calibri-based typography */
+.font-sans, h1, h2, h3, h4, h5, h6, p, span, button, input, textarea, select {
+  font-family: 'Calibri', 'Carlito', 'Aptos', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+/* Glassmorphic Lab Slide Panel */
+.specimen-slide-panel {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.16), inset 0 0 15px rgba(20, 184, 166, 0.04);
+  color: #0F172A;
+}
+
+.dark .specimen-slide-panel {
+  background: rgba(11, 18, 22, 0.94);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(20, 184, 166, 0.25);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.85), inset 0 0 15px rgba(20, 184, 166, 0.08);
+  color: #F1F5F9;
+}
+
+.lab-card {
+  background: var(--dish-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--dish-border);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .lab-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lab-card:hover {
+  border-color: rgba(13, 148, 136, 0.4);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dark .lab-card:hover {
+  border-color: rgba(20, 184, 166, 0.35);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Welcome Highlight Card */
+.welcome-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(240, 249, 255, 0.85) 100%);
+  border: 1px solid rgba(186, 230, 253, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px -5px rgba(2, 132, 199, 0.08), inset 0 0 20px rgba(56, 189, 248, 0.04);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .welcome-card {
+  background: linear-gradient(135deg, rgba(15, 26, 31, 0.92) 0%, rgba(13, 22, 28, 0.82) 100%);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(56, 189, 248, 0.05);
+}
+
+.welcome-card:hover {
+  border-color: rgba(2, 132, 199, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px -5px rgba(2, 132, 199, 0.15), 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+.dark .welcome-card:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.15);
+}
+
+/* Lab Instrument Status Dot */
+.lab-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.lab-dot-live {
+  background-color: var(--color-safe);
+  box-shadow: 0 0 10px var(--color-safe);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* Specimen organism bioluminescence helper classes */
+.glow-safe {
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+}
+
+.glow-critical {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.45);
+}
+
+.glow-base {
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.25);
+}
+
+.dark .glow-base {
+  box-shadow: 0 0 25px rgba(241, 245, 249, 0.85);
+}
+
+.glow-welcome {
+  box-shadow: 0 0 18px rgba(2, 132, 199, 0.25);
+}
+
+.dark .glow-welcome {
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+}
+
+/* Custom petri dish scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dish-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 148, 136, 0.30);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 148, 136, 0.55);
+}
+
+/* Pulsing organism divider for loading state */
+.organism-loader {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.organism-cell {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-safe);
+  box-shadow: 0 0 12px var(--color-safe);
+  animation: organism-mitosis 2.4s ease-in-out infinite alternate;
+}
+
+.organism-cell:nth-child(2) {
+  background: var(--color-high);
+  box-shadow: 0 0 12px var(--color-high);
+  animation-delay: -1.2s;
+}
+
+@keyframes organism-mitosis {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translate(14px, -10px) scale(0.85);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-14px, 10px) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .organism-cell {
+    animation: none !important;
+  }
+}
