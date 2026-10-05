@@ -49,8 +49,8 @@ export const LoginPage = () => {
       {/* Top mini-bar with brand & theme toggle */}
       <header className="px-6 py-4 flex items-center justify-between border-b border-dish-border/50">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-teal-50 dark:bg-specimen-safe/10 border border-teal-300 dark:border-specimen-safe/30 flex items-center justify-center glow-safe">
-            <Dna className="w-4 h-4 text-teal-600 dark:text-specimen-safe" />
+          <div className="w-8 h-8 rounded-xl overflow-hidden border border-dish-border flex items-center justify-center shadow-sm bg-black">
+            <img src="/logo.png" alt="EvoRedTeam Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-sans font-bold text-base tracking-tight text-specimen-text">
             EvoRedTeam
