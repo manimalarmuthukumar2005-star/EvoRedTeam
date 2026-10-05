@@ -48,10 +48,9 @@ pnpm-debug.log*
 
 # Database & Runtime Experiment Data
 backend/data/
-!backend/data/.gitkeep
-data/experiments/
-data/*.json
-data/*.db
+data/
+*.sqlite
+*.db
 
 # OS & Editor files
 .DS_Store
